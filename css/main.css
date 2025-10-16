@@ -1,0 +1,236 @@
+.Btn-Container {
+  margin: 0 auto;
+  display: flex;
+  width: 170px;
+  height: fit-content;
+  background-color: #1d2129;
+  border-radius: 40px;
+  box-shadow: 0px 5px 10px #bebebe;
+  justify-content: space-between;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+.icon-Container {
+  width: 45px;
+  height: 45px;
+  background-color: #fcfcfc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 3px solid #1d2129;
+}
+.text {
+  width: calc(170px - 45px);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.1em;
+  letter-spacing: 1.2px;
+}
+.icon-Container svg {
+  transition-duration: 1.5s;
+}
+.Btn-Container:hover .icon-Container svg {
+  transition-duration: 1s;
+  animation: arrow 0.5s linear infinite;
+}
+@keyframes arrow {
+  0% {
+    opacity: 0;
+    margin-left: 0px;
+  }
+  100% {
+    opacity: 1;
+    margin-left: 10px;
+  }
+}
+
+/* deskripsi, visi, misi */
+#kelurahan-description,
+#kelurahan-vision,
+#kelurahan-mission {
+  text-align: justify;
+  letter-spacing: 1px;
+  line-height: 1.5;
+  text-justify: inter-word;
+}
+
+#kelurahan-vision,
+#kelurahan-mission {
+  font-family: "Public Sans", sans-serif;
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
+@keyframes neonBreath {
+  0%, 100% {
+    text-shadow: 0 0 8px rgba(124, 240, 120, 0.3),
+                 0 0 16px rgba(134, 240, 120, 0.5),
+                 0 0 24px rgba(142, 240, 120, 0.6);
+    transform: scale(1);
+  }
+  50% {
+    text-shadow: 0 0 12px rgba(105, 243, 80, 0.6),
+                 0 0 24px rgba(130, 245, 73, 0.8),
+                 0 0 36px rgb(124, 244, 91);
+    transform: scale(1.08);
+  }
+}
+
+#status-user i {
+  color: #93f693;
+  animation: neonBreath 2.5s infinite ease-in-out;
+  transition: transform 0.3s ease;
+}
+
+#status-user i:hover {
+  transform: scale(1.2);
+  text-shadow: 0 0 16px rgba(255, 255, 255, 0.8),
+               0 0 32px rgb(140, 240, 120);
+}
+
+.card-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* jumlah baris */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+#gallery-search::placeholder {
+  position: relative;
+}
+
+#gallery-search::placeholder::after {
+  content: '|';
+  animation: blink 1s infinite;
+  color: #ffffffcc;
+}
+
+
+
+@keyframes blink {
+  0%, 50%, 100% {opacity: 1;}
+  25%, 75% {opacity: 0;}
+}
+
+
+/* ==== Wrapper utama Swiper ==== */
+.mySwiper {
+  padding: 30px 10px 50px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.swiper-slide {
+  height: auto !important;
+  padding-bottom: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  transition: transform 0.3s ease;
+}
+
+.swiper-slide:hover {
+  transform: translateY(-4px);
+}
+
+.swiper-slide .card {
+  height: 100%;
+  width: 100%;
+  max-width: 360px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  background: #fff;
+}
+
+.swiper-slide .card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.swiper-slide .card-body {
+  padding: 1rem;
+}
+
+.swiper-slide .card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Deskripsi */
+.swiper-slide .card-text {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.75rem;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #007bff;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  color: #0056b3;
+  transform: scale(1.1);
+}
+
+.swiper-pagination-bullet {
+  background: #ccc;
+  opacity: 1;
+  transition: background 0.3s;
+  
+}
+
+.swiper-pagination-bullet-active {
+  background: #007bff;
+}
+
+@media (max-width: 768px) {
+  .swiper-slide .card img {
+    height: 180px;
+  }
+}
+
+/* Warna default tombol aktif */
+.btn-group .btn.active {
+  color: #fff; /* teks putih */
+}
+
+/* Warna berbeda untuk tiap kategori */
+.btn-group .btn[data-tag="semua"].active {
+  background-color: #ee1515; /* abu-abu */
+  border-color: #ee1515;
+}
+
+.btn-group .btn[data-tag="rutin"].active {
+  background-color: #28a745; /* hijau */
+  border-color: #28a745;
+}
+
+.btn-group .btn[data-tag="edukasi"].active {
+  background-color: #17a2b8; /* biru toska */
+  border-color: #17a2b8;
+}
+
+.btn-group .btn[data-tag="nasional"].active {
+  background-color: #ffc107; /* kuning */
+  border-color: #ffc107;
+}
+

@@ -1,0 +1,5 @@
+fetch("pages/update_profil.php", {
+  method: "POST",
+  headers: { "Content-Type": "application/x-www-form-urlencoded" },
+  body: "deskripsi=test&visi=test&misi=test"
+}).then(r => r.text()).then(console.log)
